@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lic. Narella Di Nicolo | Psicología ACT y Neuroafirmación</title>
+    <title>Lic. Narella Di Nicolo | Psicología Online UBA</title>
+    
+    <meta name="description" content="Psicóloga egresada de la UBA. Especialista en Terapias Contextuales (ACT, DBT) y Neurodivergencia. Terapia online con enfoque en autonomía y evidencia científica.">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --verde-ingles: #1b3022; /* El verde bosque que buscamos */
-            --verde-boton: #2d5a27;
-            --texto-suave: #4a4a4a;
-            --bg: #ffffff;
+            --primary: #4A4A4A;   /* Gris cálido profesional */
+            --accent: #27ae60;    /* Verde acción */
+            --bg: #FEFDF5;        /* Crema suave sugerido */
+            --text: #333;
+            --linkedin: #0077b5;  /* Azul LinkedIn */
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--texto-suave);
+            line-height: 1.6;
+            color: var(--text);
             background-color: var(--bg);
             margin: 0;
-            padding: 20px;
             display: flex;
             justify-content: center;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 550px;
-            text-align: center; /* Centra todo el contenido */
-            padding-top: 40px;
+            max-width: 600px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            text-align: center;
         }
 
         header img {
@@ -37,77 +43,105 @@
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 25px;
-            border: 2px solid #eee;
+            border: 4px solid var(--bg);
+            margin-bottom: 20px;
         }
 
         h1 {
-            color: var(--verde-ingles);
-            font-size: 1.9rem;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
         }
 
         .subtitle {
-            color: var(--verde-ingles);
-            font-weight: 400;
-            font-size: 1.1rem;
-            margin-bottom: 35px;
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 30px;
             display: block;
-            opacity: 0.8;
         }
 
-        .content {
-            margin-bottom: 40px;
-        }
-
-        .content p {
+        .intro-text {
+            text-align: left;
             font-size: 1.05rem;
-            text-align: center; /* Texto centrado para mayor armonía visual */
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            color: #444;
         }
 
-        .tag-container {
+        .education {
+            text-align: left;
+            margin: 40px 0;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .education h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .edu-item {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center; /* Centra las etiquetas */
-            margin-bottom: 35px;
+            align-items: flex-start;
+            margin-bottom: 15px;
         }
 
-        .tag {
-            background: #f0f2f0;
-            padding: 6px 14px;
-            border-radius: 20px;
+        .edu-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            margin-right: 15px;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .edu-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .edu-meta {
+            color: #777;
             font-size: 0.85rem;
-            color: var(--verde-ingles);
-            font-weight: 500;
         }
 
-        .cta-button {
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
             display: block;
-            background-color: var(--verde-boton);
-            color: white;
             text-decoration: none;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
+            transition: all 0.2s ease;
         }
 
-        .cta-button:hover {
+        .btn-wa {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-li {
+            background-color: white;
+            color: var(--linkedin);
+            border: 2px solid var(--linkedin);
+        }
+
+        .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(45, 90, 39, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         footer {
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #aaa;
         }
     </style>
 </head>
@@ -117,31 +151,49 @@
     <header>
         <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         <h1>Lic. Narella Di Nicolo</h1>
-        <span class="subtitle">Conductismo Contextual & Perspectiva Neuroafirmativa</span>
+        <span class="subtitle">Psicóloga (UBA) | Terapia Online Federal</span>
     </header>
 
-    <main class="content">
+    <div class="intro-text">
         <p>
-            Acompaño procesos enfocados en la <strong>recuperación de la autonomía personal</strong> y la gestión de la ansiedad, utilizando herramientas con evidencia científica. 
+            Mi enfoque combina el <strong>rigor clínico</strong> de la Universidad de Buenos Aires con la flexibilidad de las <strong>Terapias de Tercera Generación</strong>. 
         </p>
         <p>
-            Especializada en el abordaje integral de <strong>neurodivergencias (CEA/TDAH)</strong> y entrenamiento en <strong>habilidades sociales</strong>, con el objetivo de construir una vida alineada con tus valores.
+            Acompaño a adultos en el desarrollo de su <strong>autonomía</strong>, brindando herramientas prácticas para la gestión de la ansiedad y procesos terapéuticos especializados con <strong>perspectiva neuroafirmativa</strong> (CEA/TDAH).
         </p>
+    </div>
 
-        <div class="tag-container">
-            <span class="tag">Adultos</span>
-            <span class="tag">Terapia Online Federal</span>
-            <span class="tag">ACT / DBT</span>
-            <span class="tag">Asertividad</span>
+    <section class="education">
+        <h2>Formación Académica</h2>
+        <div class="edu-item">
+            <div class="edu-dot"></div>
+            <p><strong>Licenciatura en Psicología</strong><br>
+            <span class="edu-meta">Universidad de Buenos Aires (UBA)</span></p>
         </div>
-    </main>
+        <div class="edu-item">
+            <div class="edu-dot"></div>
+            <p><strong>Especialista en Terapias Contextuales</strong><br>
+            <span class="edu-meta">Formación avanzada en modelos ACT y DBT.</span></p>
+        </div>
+        <div class="edu-item">
+            <div class="edu-dot"></div>
+            <p><strong>Abordaje Clínico de Neurodivergencias</strong><br>
+            <span class="edu-meta">Especialización en adultos CEA y TDAH.</span></p>
+        </div>
+    </section>
 
-    <a href="https://wa.me/549[TuNumero]?text=Hola%20Lic.%20Narella,%20vi%20tu%20sitio%20web%20y%20me%20gustaría%20consultar%20por%20una%20entrevista." class="cta-button">
-        Consultar disponibilidad por WhatsApp
-    </a>
+    <div class="cta-container">
+        <a href="https://wa.me/5491156213569?text=Hola%20Lic.%20Narella,%20vi%20tu%20web%20y%20me%20gustaría%20consultar%20por%20una%20entrevista." class="btn btn-wa">
+            Solicitar entrevista informativa por WhatsApp
+        </a>
+        
+        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="btn btn-li">
+            Ver trayectoria y certificados en LinkedIn
+        </a>
+    </div>
 
     <footer>
-        M.N. 85.175 | Especialista en Psicología Clínica
+        Matrícula Nacional [Tu MN] | Atención Virtual para toda Argentina
     </footer>
 </div>
 
