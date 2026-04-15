@@ -74,18 +74,29 @@
         }
 
         .main-content {
-            text-align: justify; /* Texto justificado como pediste */
+            text-align: justify;
+            hyphens: auto; /* Agrega guiones automáticos para evitar huecos */
+            -webkit-hyphens: auto;
             font-size: 1.05rem;
             margin-bottom: 40px;
         }
 
         .clinical-footer {
-            text-align: justify; /* También justificado */
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
             font-size: 0.95rem;
             font-style: italic;
             margin-bottom: 45px;
             padding: 20px 0;
-            border-top: 1px solid rgba(27, 48, 34, 0.1); /* Línea divisoria muy tenue */
+            border-top: 1px solid rgba(27, 48, 34, 0.1);
+        }
+
+        /* Ajuste específico para celulares (Pantallas de menos de 480px) */
+        @media (max-width: 480px) {
+            .main-content, .clinical-footer {
+                text-align: left; /* En móviles muy chicos es mejor alinear a la izquierda */
+            }
         }
 
         .cta-container {
@@ -103,16 +114,17 @@
             transition: all 0.3s ease;
         }
 
-        .btn-wa {
+          .btn-wa {
             background-color: var(--accent);
             color: white;
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Tamaño unificado */
         }
 
         .btn-li {
-            background-color: var(--linkedin); /* Fondo azul */
-            color: white;                      /* Letra blanca */
-            font-size: 0.95rem;
+            background-color: var(--linkedin);
+            color: white;
+            font-size: 1.05rem; /* Tamaño unificado */
+            border: none;
         }
 
 
