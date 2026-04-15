@@ -5,132 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lic. Narella Di Nicolo | Psicología Online</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-dark: #1B3022;
-            --warm-bg: #F7F5F0;
+            --primary-dark: #1B3022;   /* Verde Inglés Profundo */
+            --warm-bg: #F9F8F3;       /* Crema de alta gama (más limpio) */
             --text-main: #2C2C2C;
-            --white-btn: #FFFFFF;
+            --border-color: rgba(27, 48, 34, 0.15);
         }
 
-        html, body { background-color: var(--warm-bg); margin: 0; padding: 0; }
+        html, body {
+            background-color: var(--warm-bg);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .container { max-width: 420px; text-align: center; }
-
-        header img {
-            width: 140px; height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary-dark);
-            margin-bottom: 20px;
-        }
-
-        /* PSICOLOGÍA DEL TÍTULO: Primero el beneficio, luego el nombre */
-        h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-dark); margin-bottom: 10px; font-weight: 600; }
-        h1 { font-size: 1.8rem; margin: 0 0 30px 0; letter-spacing: -0.8px; font-weight: 700; color: var(--primary-dark); line-height: 1.2; }
-
-        .content-block { text-align: left; margin-bottom: 40px; }
-
-        /* PROPUESTA DE VALOR: Directa al grano */
-        .value-prop {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--primary-dark);
-            text-align: center;
-            line-height: 1.4;
-        }
-
-        .main-text { font-size: 1rem; color: #444; }
-        .main-text p { margin-bottom: 15px; }
-
-        /* LISTA DE CONEXIÓN: Lo que el paciente busca */
-        .benefits-list {
-            list-style: none;
-            padding: 0;
-            margin: 25px 0;
-            font-size: 0.95rem;
-        }
-        .benefits-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+        /* EL MARCO EDITORIAL: Esto quita lo amateur */
+        .main-card {
+            max-width: 420px;
+            background: white;
+            padding: 40px 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            border-radius: 4px; /* Bordes casi rectos para seriedad */
             position: relative;
         }
-        .benefits-list li::before {
-            content: '•';
-            position: absolute;
-            left: 5px;
-            color: var(--primary-dark);
-            font-weight: bold;
+
+        header {
+            margin-bottom: 35px;
+            text-align: center;
         }
 
-        .cta-container { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+        /* Foto con doble marco refinado */
+        .profile-frame {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .profile-frame img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--primary-dark);
+            padding: 5px; /* Espacio entre el borde y la foto */
+            display: block;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            letter-spacing: -0.5px;
+            font-weight: 500; /* Más liviano = más elegante */
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Cuerpo de texto con aire */
+        .content-block {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .value-prop {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
+            font-weight: 400;
+        }
+
+        /* Botones estilo "Studio" */
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
         .btn {
             display: block;
             text-decoration: none;
-            padding: 20px;
-            border-radius: 16px;
-            font-weight: 700;
-            transition: all 0.3s ease;
+            padding: 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             text-align: center;
+            border-radius: 2px;
         }
 
-        .btn-wa { background-color: var(--primary-dark); color: white !important; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(27, 48, 34, 0.2); }
-        .btn-li { background-color: var(--white-btn); color: var(--primary-dark) !important; border: 1.5px solid var(--primary-dark); }
+        .btn-wa {
+            background-color: var(--primary-dark);
+            color: white !important;
+            border: 1px solid var(--primary-dark);
+        }
 
-        .btn:active { transform: scale(0.98); }
+        .btn-li {
+            background-color: transparent;
+            color: var(--primary-dark) !important;
+            border: 1px solid var(--border-color);
+        }
 
-        .footer { font-size: 0.8rem; opacity: 0.5; margin-top: 40px; font-style: italic; }
+        .btn:hover {
+            opacity: 0.8;
+            letter-spacing: 1.5px; /* Efecto elegante al pasar el mouse */
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.4;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="main-card">
     <header>
-        <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
-        <h2>Lic. Narella Di Nicolo</h2>
-        <h1>Terapia Online: Herramientas reales para una vida con sentido.</h1>
+        <div class="profile-frame">
+            <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
+        </div>
+        <h1>Narella Di Nicolo</h1>
+        <span class="header-tag">Psicología Online / UBA</span>
     </header>
 
     <div class="content-block">
         <div class="value-prop">
-            Especializada en procesos de cambio mediante modelos basados en evidencia (ACT y DBT).
+            Estrategias basadas en evidencia para construir una vida con sentido.
         </div>
-        
-        <div class="main-text">
-            <p>Mi enfoque combina el <strong>análisis funcional</strong> con una <strong>mirada neuroafirmativa</strong> para que logres:</p>
-            <ul class="benefits-list">
-                <li>Gestionar el malestar con mayor flexibilidad.</li>
-                <li>Desarrollar herramientas de autorregulación efectivas.</li>
-                <li>Acciones alineadas a lo que de verdad te importa.</li>
-            </ul>
+        <div class="description">
+            Especializada en <strong>ACT</strong> y <strong>DBT</strong> bajo una mirada neuroafirmativa. Un espacio colaborativo diseñado para fortalecer tu flexibilidad y autorregulación.
         </div>
     </div>
 
     <div class="cta-container">
-        <a href="https://wa.me/5491156213569?text=Hola%20Narella,%20vi%20tu%20perfil%20y%20me%20gustaría%20consultarte%20por%20espacio%20terapéutico." class="btn btn-wa">
-            Consultar disponibilidad
+        <a href="https://wa.me/5491156213569?text=Hola%20Narella,%20quisiera%20consultarte%20por%20un%20espacio%20terapéutico." class="btn btn-wa">
+            SOLICITAR CONSULTA INICIAL
         </a>
         <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-li">
-            Trayectoria Académica
+            TRAYECTORIA PROFESIONAL
         </a>
     </div>
 
     <div class="footer">
-        Psicóloga (UBA) | M.N. 85.175<br>
-        Enfoque clínico riguroso y colaborativo.
+        M.N. 85.175 • BUENOS AIRES, ARGENTINA
     </div>
 </div>
 
