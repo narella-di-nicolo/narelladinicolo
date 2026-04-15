@@ -74,17 +74,13 @@
         }
 
         .main-content {
-            text-align: justify;
-            hyphens: auto; /* Agrega guiones automáticos para evitar huecos */
-            -webkit-hyphens: auto;
+            text-align: justify; /* Se mantiene justificado en tablets/PC */
             font-size: 1.05rem;
             margin-bottom: 40px;
         }
 
         .clinical-footer {
             text-align: justify;
-            hyphens: auto;
-            -webkit-hyphens: auto;
             font-size: 0.95rem;
             font-style: italic;
             margin-bottom: 45px;
@@ -92,12 +88,19 @@
             border-top: 1px solid rgba(27, 48, 34, 0.1);
         }
 
-        /* Ajuste específico para celulares (Pantallas de menos de 480px) */
+        /* Ajuste para que no se corte en celulares */
         @media (max-width: 480px) {
             .main-content, .clinical-footer {
-                text-align: left; /* En móviles muy chicos es mejor alinear a la izquierda */
+                text-align: left; /* Quita el justificado en móvil */
+                hyphens: none;    /* Quita los guiones de corte */
+                -webkit-hyphens: none;
+            }
+            
+            h1 {
+                font-size: 1.6rem; /* Achica un pelín el título para que no salte de línea */
             }
         }
+
 
         .cta-container {
             display: flex;
