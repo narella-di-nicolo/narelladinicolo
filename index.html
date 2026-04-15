@@ -2,16 +2,16 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lic. Narella Di Nicolo | Psicología Online</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1B3022;   /* Verde Inglés Oscuro */
+            --primary: #1B3022;   /* Verde Inglés Profundo */
             --accent: #27ae60;    /* Verde WhatsApp */
-            --bg: #FEFDF5;        /* Fondo Crema */
+            --bg: #FDFCF7;        /* Fondo Crema Muy Suave */
             --linkedin: #0077b5;  /* Azul LinkedIn */
         }
 
@@ -19,77 +19,81 @@
             background-color: var(--bg);
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased; /* Suaviza fuentes en iOS */
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
+            line-height: 1.7; /* Más interlineado para descanso visual */
             color: var(--primary);
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 30px 15px; /* Menos padding lateral para que el texto respire */
         }
 
         .container {
-            max-width: 460px; /* Ancho optimizado para lectura */
-            text-align: center;
+            max-width: 440px; /* Ancho optimizado para iPad/Móvil */
+            text-align: left; /* UNIFICACIÓN DE ALINEACIÓN A LA IZQUIERDA */
+        }
+
+        header {
+            margin-bottom: 30px;
         }
 
         header img {
-            width: 115px;
-            height: 115px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid rgba(27, 48, 34, 0.1);
             margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra suave para la foto */
         }
 
         h1 {
-            font-size: 1.75rem;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            font-size: 1.7rem;
+            margin: 0 0 5px 0;
+            letter-spacing: -0.6px;
+            font-weight: 600;
         }
 
-        /* Cambiado a negrita completa */
+        /* Información técnica: Todo en negrita sutil y centrado en la línea */
         .header-info {
             font-size: 0.9rem;
-            margin-bottom: 40px;
-            font-weight: 600; 
+            margin: 0 0 35px 0;
+            color: var(--primary);
+            opacity: 0.8;
             letter-spacing: 0.3px;
         }
 
-        /* Unificación de alineación del texto */
+        /* Bloque de Texto Unificado: No más justificado, no más caos */
         .content-block {
-            text-align: justify;
-            text-justify: inter-word;
+            text-align: left; /* Alineado a la izquierda es más honesto y legible en móviles */
+            font-size: 1rem;
             margin-bottom: 40px;
         }
 
         .headline {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
             display: block;
-        }
-
-        .main-text {
-            font-size: 1rem;
-            opacity: 0.95;
+            border-left: 3px solid rgba(27, 48, 34, 0.1); /* Detalle elegante de separación */
+            padding-left: 15px;
         }
 
         .main-text p {
-            margin-bottom: 18px;
+            margin: 0 0 18px 0; /* Más espacio entre párrafos */
+            opacity: 0.95;
         }
 
-        /* Botones */
-           /* ... (mantener lo anterior y actualizar estos puntos específicos) ... */
-
+        /* Botones: Se mantienen impecables */
         .cta-container {
             display: flex;
             flex-direction: column;
             gap: 14px;
-            margin-bottom: 40px;
-            position: relative; /* Asegura que esté en su propia capa */
-            z-index: 10;        /* Lo pone por encima de todo */
+            margin-bottom: 45px;
         }
 
         .btn {
@@ -98,14 +102,14 @@
             padding: 18px;
             border-radius: 12px;
             font-weight: 600;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            touch-action: manipulation; /* ELIMINA EL RETRASO EN SAFARI/BRAVE */
-            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center; /* Texto centrado DENTRO del botón */
+            touch-action: manipulation;
         }
 
         .btn-wa {
             background-color: var(--accent);
-            color: white !important; /* Forzamos color para Brave */
+            color: white !important;
             font-size: 1.1rem;
             box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
             border: none;
@@ -118,35 +122,23 @@
             font-size: 1rem;
         }
 
-        /* Si la foto no carga, que no ocupe espacio fantasma */
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
 
+        /* Footer Clìnico: Pasa al final con estilo serio */
         .clinical-footer {
             font-size: 0.85rem;
             font-style: italic;
             opacity: 0.7;
             padding-top: 25px;
-            border-top: 1px solid rgba(27, 48, 34, 0.1);
+            border-top: 1px solid rgba(27, 48, 34, 0.05);
+            text-align: center; /* Solo el footer va centrado al final */
         }
 
         strong {
             font-weight: 600;
-        }
-
-        @media (max-width: 480px) {
-            .content-block {
-                text-align: left; /* En móviles el justificado suele fallar, el alineado izquierdo es más limpio */
-            }
         }
     </style>
 </head>
@@ -157,7 +149,7 @@
         <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         <h1>Lic. Narella Di Nicolo</h1>
         <div class="header-info">
-            PSICÓLOGA (UBA) | MATRÍCULA NACIONAL 85.175
+            <strong>PSICÓLOGA (UBA) | MATRÍCULA NACIONAL 85.175</strong>
         </div>
     </header>
 
@@ -177,11 +169,11 @@
     </div>
 
     <div class="cta-container">
-        <a href="https://wa.me/5491156213569?text=Hola%20Lic.%20Narella,%20quisiera%20consultarte%20por%20tu%20enfoque%20y%20honorarios." class="btn btn-wa">
+        <a href="https://wa.me/549TuNumeroAqui?text=Hola%20Lic.%20Narella,%20quisiera%20consultarte%20por%20tu%20enfoque%20y%20honorarios." class="btn btn-wa">
             Iniciar consulta por WhatsApp
         </a>
         
-        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-li">
+        <a href="https://www.linkedin.com/in/tu-perfil-aqui" target="_blank" class="btn btn-li">
             Ver trayectoria profesional
         </a>
     </div>
@@ -194,4 +186,3 @@
 
 </body>
 </html>
-    
