@@ -3,167 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lic. Narella Di Nicolo | Psicóloga Online | UBA</title>
+    <title>Lic. Narella Di Nicolo | Psicología Online</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1B3022;
-            --accent: #27ae60;
-            --bg: #FEFDF5;
-            --linkedin: #0077b5;
+            --primary: #1B3022;   /* Verde Inglés Oscuro */
+            --accent: #27ae60;    /* Verde WhatsApp */
+            --bg: #FEFDF5;        /* Fondo Crema */
+            --linkedin: #0077b5;  /* Azul LinkedIn */
         }
 
         html, body {
             background-color: var(--bg);
             margin: 0;
             padding: 0;
-            height: 100%;
+            overflow-x: hidden;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6; /* Un poco más compacto para que suba el botón */
+            line-height: 1.6;
             color: var(--primary);
             display: flex;
             justify-content: center;
-            padding: 40px 20px; /* Reduje el padding superior de 60px a 40px */
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 520px;
+            max-width: 480px; /* Un poco más estrecho mejora la lectura */
             text-align: center;
-            background: transparent;
         }
 
         header img {
-            width: 110px; /* Un poco más chica la foto para ganar espacio */
+            width: 110px;
             height: 110px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #E6E4D9;
+            border: 2px solid rgba(27, 48, 34, 0.1);
             margin-bottom: 15px;
         }
 
         h1 {
-            color: var(--primary);
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             margin-bottom: 5px;
             letter-spacing: -0.5px;
         }
 
         .header-info {
             font-size: 0.9rem;
-            margin-bottom: 30px; /* Menos espacio aquí */
-            color: var(--primary);
+            margin-bottom: 35px;
             opacity: 0.8;
+            letter-spacing: 0.5px;
         }
 
+        /* EL GANCHO: Titular destacado */
+        .headline {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        /* CUERPO TÉCNICO: Justificado con aire */
         .main-content {
             text-align: justify;
-            font-size: 1rem; /* Bajamos de 1.05 a 1 para que el flujo sea mejor */
-            margin-bottom: 25px;
-            text-justify: inter-word; /* Mejora el espacio entre palabras */
+            font-size: 1rem;
+            margin-bottom: 35px;
+            border-left: 2px solid rgba(27, 48, 34, 0.05); /* Un detalle sutil de diseño */
+            padding-left: 15px;
         }
 
-        .clinical-footer {
-            text-align: justify;
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 30px;
-            padding: 15px 0;
-            border-top: 1px solid rgba(27, 48, 34, 0.1);
+        .main-content p {
+            margin-bottom: 15px;
         }
 
+        /* BOTONES: Los protagonistas */
         .cta-container {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin-bottom: 35px;
         }
 
         .btn {
             display: block;
             text-decoration: none;
-            padding: 16px; /* Botón un poco más compacto */
+            padding: 18px;
             border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .btn-wa {
             background-color: var(--accent);
             color: white;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.2);
         }
 
         .btn-li {
-            background-color: var(--linkedin);
-            color: white;
-            font-size: 1.05rem;
-            border: none;
+            background-color: transparent;
+            color: var(--linkedin);
+            border: 1px solid var(--linkedin);
+            font-size: 1rem;
+            box-shadow: none;
         }
 
-        /* Ajustes específicos para móviles */
-        @media (max-width: 480px) {
-            body {
-                padding: 20px 15px; /* Menos margen externo en el celu */
-            }
-            .main-content {
-                font-size: 0.95rem; /* Letra un pelín más chica en móvil evita el efecto río */
-            }
-            header img {
-                width: 100px;
-                height: 100px;
-            }
+        /* FOOTER CLÍNICO: Pasa al final para no estorbar el contacto */
+        .clinical-footer {
+            font-size: 0.85rem;
+            font-style: italic;
+            opacity: 0.7;
+            padding-top: 20px;
+            border-top: 1px solid rgba(27, 48, 34, 0.1);
         }
 
         strong {
             font-weight: 600;
-            color: var(--primary);
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 30px 20px; }
+            .headline { font-size: 1.1rem; }
+            .main-content { text-align: left; } /* En móviles muy chicos evitamos el efecto río */
         }
     </style>
-
 </head>
 <body>
 
 <div class="container">
     <header>
-        <img src="tu-foto.jpg.jpg" alt="Lic. Narella Di Nicolo">
+        <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         <h1>Lic. Narella Di Nicolo</h1>
         <div class="header-info">
-            <span class="subtitle">Psicóloga (UBA) | Terapia Online</span>
-            <span class="matricula">Matrícula Nacional 85.175 </span>
+            <strong>Psicóloga (UBA)</strong> | Matrícula Nacional 85.175
         </div>
     </header>
 
-<div class="main-content">
-    <p>
-        Acompaño procesos terapéuticos orientados a promover la <strong>flexibilidad psicológica</strong> y el compromiso con los <strong>valores personales</strong>. El objetivo principal es ampliar el repertorio de acciones para construir una <strong>vida con sentido y dirección propia</strong>, desarrollando la capacidad de transitar la experiencia presente de forma funcional.
-    </p>
-    <p>
-        Propongo un espacio de trabajo <strong>colaborativo</strong> fundamentado en el <strong>análisis funcional de la conducta</strong>. Bajo una <strong>mirada neuroafirmativa</strong>, buscamos identificar las variables que mantienen el malestar para fortalecer la <strong>autorregulación</strong> y la <strong>singularidad de cada perfil</strong>.
-    </p>
-</div>
+    <div class="headline">
+        Propongo un espacio para fortalecer la <strong>flexibilidad psicológica</strong> y construir una <strong>vida con sentido</strong>, orientada a tus valores personales.
+    </div>
 
-
-
-    <div class="clinical-footer">
-        Mi práctica integra modelos basados en evidencia (ACT y DBT) mediante un formato de atención virtual diseñado para pacientes de toda la Argentina.
+    <div class="main-content">
+        <p>
+            A través del <strong>análisis funcional de la conducta</strong>, trabajamos de forma colaborativa para identificar las variables que mantienen el malestar y obstaculizan tu desarrollo.
+        </p>
+        <p>
+            Bajo una <strong>mirada neuroafirmativa</strong>, desarrollamos herramientas de <strong>autorregulación</strong> respetando la singularidad de cada perfil y su forma de procesar el mundo.
+        </p>
     </div>
 
     <div class="cta-container">
-    <a href="https://wa.me/5491156213569?text=Hola%20Lic.%20Narella,%20quisiera%20consultarte%20por%20tu%20enfoque%20y%20honorarios." class="btn btn-wa">
-    Contactar para orientación inicial </a>
-
-        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="btn btn-li">
-            Consultar trayectoria profesional 
+        <a href="https://wa.me/5491156213569?text=Hola%20Lic.%20Narella,%20quisiera%20consultarte%20por%20tu%20enfoque%20y%20honorarios." class="btn btn-wa">
+            Iniciar consulta por WhatsApp
+        </a>
+        
+        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-li">
+            Ver trayectoria profesional
         </a>
     </div>
 
-    <footer>
-        Atención Online en Argentina
-    </footer>
+    <div class="clinical-footer">
+        Atención virtual personalizada basada en evidencia (ACT y DBT).<br>
+        Buenos Aires, Argentina.
+    </div>
 </div>
 
 </body>
