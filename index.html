@@ -9,9 +9,9 @@
     
     <style>
         :root {
-            --forest: #1B3022;
-            --bone: #FBFBFA;
-            --clay: #555555;
+            --forest: #1B3022;   /* Verde Bosque Profundo */
+            --bone: #FBFBFA;     /* Blanco Hueso (Premium) */
+            --clay: #555555;     /* Gris Arcilla para textos secundarios */
             --border: rgba(27, 48, 34, 0.12);
         }
 
@@ -32,65 +32,82 @@
             padding: 20px;
         }
 
-        .main-container {
-            max-width: 400px;
-            width: 100%;
+        /* EL MARCO EDITORIAL: Esto quita lo amateur */
+        .main-card {
+            max-width: 420px;
+            background: white;
+            padding: 40px 30px;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            border-radius: 4px; /* Bordes casi rectos para seriedad */
+            position: relative;
+        }
+
+        header {
+            margin-bottom: 35px;
             text-align: center;
-            padding: 20px 0;
         }
 
-        .profile-wrapper {
-            margin-bottom: 30px;
+        /* Foto con doble marco refinado */
+        .profile-frame {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
         }
 
-        .profile-wrapper img {
-            width: 140px;
-            height: 140px;
+        .profile-frame img {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid var(--border);
-            padding: 6px;
+            border: 1px solid var(--primary-dark);
+            padding: 5px; /* Espacio entre el borde y la foto */
+            display: block;
         }
 
-        header h1 {
-            font-size: 1.4rem;
-            font-weight: 500;
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            letter-spacing: -0.5px;
+            font-weight: 500; /* Más liviano = más elegante */
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 0;
-            color: var(--forest);
+            margin-top: 5px;
+            display: block;
         }
 
-        .credentials {
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-            color: var(--clay);
-            margin-top: 8px;
-            display: block;
+        /* Cuerpo de texto con aire */
+        .content-block {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .value-prop {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
             font-weight: 400;
         }
 
-        .bio-section {
-            margin: 40px 0;
-            padding: 0 15px;
-        }
-
-        /* SLOGAN MÁS VENDIBLE */
-        .statement {
-            font-size: 1.15rem;
-            line-height: 1.4;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--forest);
-        }
-
-        .approach {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--clay);
-        }
-
-        .action-area {
+        /* Botones estilo "Studio" */
+        .cta-container {
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -99,75 +116,77 @@
         .btn {
             display: block;
             text-decoration: none;
-            padding: 18px;
-            font-size: 0.85rem;
+            padding: 16px;
+            font-size: 0.9rem;
             font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-align: center;
             border-radius: 2px;
         }
 
-        .btn-primary {
-            background-color: var(--forest);
+        .btn-wa {
+            background-color: var(--primary-dark);
             color: white !important;
+            border: 1px solid var(--primary-dark);
         }
 
-        .btn-secondary {
-            border: 1px solid var(--border);
-            color: var(--forest) !important;
-            background: transparent;
+        .btn-li {
+            background-color: transparent;
+            color: var(--primary-dark) !important;
+            border: 1px solid var(--border-color);
         }
 
         .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
+            opacity: 0.8;
+            letter-spacing: 1.5px; /* Efecto elegante al pasar el mouse */
         }
 
-        .footer-note {
-            margin-top: 50px;
+        .footer {
+            margin-top: 40px;
             font-size: 0.7rem;
-            color: var(--clay);
-            opacity: 0.6;
-            letter-spacing: 1px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.4;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-<div class="main-container">
+<div class="main-card">
     <header>
-        <div class="profile-wrapper">
+        <div class="profile-frame">
             <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         </div>
         <h1>Narella Di Nicolo</h1>
-        <span class="credentials">Psicóloga (UBA) • M.N. 85.175</span>
+        <span class="header-tag">Psicología Online / UBA</span>
     </header>
 
-    <div class="bio-section">
-<div class="statement">
-    Aprender a convivir con lo que sentís, para hacer lo que te importa.
-</div>
-
-        <div class="approach">
-            Mi práctica clínica se enfoca en procesos de cambio mediante modelos con evidencia científica (ACT y DBT) bajo una perspectiva neuroafirmativa.
+    <div class="content-block">
+        <div class="value-prop">
+            Aprender a convivir con lo que sentís, para hacer lo que te importa.
+        </div>
+        <div class="description">
+            Especializada en <strong>ACT</strong> y <strong>DBT</strong> bajo una mirada neuroafirmativa. Un espacio colaborativo diseñado para fortalecer tu flexibilidad y autorregulación.
         </div>
     </div>
 
-    <div class="action-area">
-        <a href="https://wa.me/5491156213569?text=Hola%20Narella,%20quisiera%20consultarte%20para%20coordinar%20una%20primera%20entrevista." class="btn btn-primary">
-            COORDINAR UNA ENTREVISTA
+    <div class="cta-container">
+        <a href="https://wa.me/5491156213569?text=Hola%20Narella,%20quisiera%20consultarte%20para%20coordinar%20una%20primera%20entrevista." class="btn btn-wa">
+            SOLICITAR ORIENTACIÓN INICIAL
         </a>
-        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-secondary">
+        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-li">
             TRAYECTORIA ACADÉMICA
         </a>
     </div>
 
-    <div class="footer-note">
-        Atención Virtual • Buenos Aires, Argentina
+    <div class="footer">
+        M.N. 85.175 • BUENOS AIRES, ARGENTINA
     </div>
 </div>
 
 </body>
 </html>
-(
