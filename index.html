@@ -3,122 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lic. Narella Di Nicolo | Psicología Online</title>
+    <title>Lic. Narella Di Nicolo | Psicología Online | UBA</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1B3022;   /* Verde Inglés Profundo */
-            --accent: #27ae60;    /* Verde WhatsApp */
-            --bg: #FDFCF7;        /* Fondo Crema Muy Suave */
-            --linkedin: #0077b5;  /* Azul LinkedIn */
+            --primary-dark: #1B3022;   /* Verde Inglés Profundo */
+            --warm-bg: #F1E7D0;       /* Papel Envejecido / Pergamino Cálido */
+            --accent-wa: #27ae60;      /* Verde WhatsApp (suavizado sutilmente) */
+            --text-main: #2C2C2C;      /* Negro Carbón Suave para texto */
+            --old-white: #FDFCF7;      /* Blanco Antiguo para botones */
+            --linkedin: #0077b5;      /* Azul LinkedIn */
         }
 
         html, body {
-            background-color: var(--bg);
+            background-color: var(--warm-bg);
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased; /* Suaviza fuentes en iOS */
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7; /* Más interlineado para descanso visual */
-            color: var(--primary);
+            /* Fuente Serif para el cuerpo de texto */
+            font-family: 'EB Garamond', serif;
+            line-height: 1.65;
+            color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 30px 15px; /* Menos padding lateral para que el texto respire */
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 440px; /* Ancho optimizado para iPad/Móvil */
-            text-align: left; /* UNIFICACIÓN DE ALINEACIÓN A LA IZQUIERDA */
+            max-width: 460px; /* Ancho optimizado */
+            text-align: center; /* Alineación central para la estética académica clásica */
         }
 
+        /* INTEGRACIÓN DE LA FOTO: Más grande y con marco histórico */
         header {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            position: relative;
         }
 
         header img {
-            width: 110px;
-            height: 110px;
+            width: 150px; /* Mucho más grande */
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid rgba(27, 48, 34, 0.1);
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra suave para la foto */
+            border: 5px solid rgba(27, 48, 34, 0.15); /* Marco ovalado profundo */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* Sombra sutil y profunda */
+            margin-bottom: 25px;
         }
 
+        /* Tipografía de Título: Serif y seria */
         h1 {
-            font-size: 1.7rem;
-            margin: 0 0 5px 0;
-            letter-spacing: -0.6px;
+            font-size: 2rem;
+            margin: 0 0 8px 0;
+            letter-spacing: -1px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Información técnica: Todo en negrita sutil, Sans-serif para contraste moderno */
+        .header-info {
+            font-family: 'Inter', sans-serif; /* Contraste moderno sutil */
+            font-size: 0.85rem;
+            margin: 0 0 45px 0;
+            color: var(--primary-dark);
+            opacity: 0.85;
+            letter-spacing: 0.5px;
             font-weight: 600;
         }
 
-        /* Información técnica: Todo en negrita sutil y centrado en la línea */
-        .header-info {
-            font-size: 0.9rem;
-            margin: 0 0 35px 0;
-            color: var(--primary);
-            opacity: 0.8;
-            letter-spacing: 0.3px;
-        }
-
-        /* Bloque de Texto Unificado: No más justificado, no más caos */
+        /* Bloque de Texto Unificado: Estilo académico, centrado y sobrio */
         .content-block {
-            text-align: left; /* Alineado a la izquierda es más honesto y legible en móviles */
-            font-size: 1rem;
-            margin-bottom: 40px;
+            text-align: center; /* Alineación académica clásica */
+            font-size: 1.05rem;
+            margin-bottom: 45px;
+            padding: 0 10px;
         }
 
         .headline {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 25px;
             display: block;
-            border-left: 3px solid rgba(27, 48, 34, 0.1); /* Detalle elegante de separación */
-            padding-left: 15px;
+            color: var(--primary-dark);
+            font-weight: 500;
+            /* Detalle de separación sutil, integrado en el centro */
+            position: relative;
+        }
+        
+        .headline::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: rgba(27, 48, 34, 0.1);
+            margin: 15px auto 0 auto;
         }
 
         .main-text p {
-            margin: 0 0 18px 0; /* Más espacio entre párrafos */
+            margin: 0 0 20px 0; /* Más espacio entre párrafos */
             opacity: 0.95;
         }
 
-        /* Botones: Se mantienen impecables */
+        /* Botones: Integración Académica Sobria */
         .cta-container {
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            margin-bottom: 45px;
+            gap: 15px;
+            margin-bottom: 50px;
         }
 
         .btn {
+            font-family: 'Inter', sans-serif; /* Sans-serif para los botones */
             display: block;
             text-decoration: none;
             padding: 18px;
             border-radius: 12px;
             font-weight: 600;
             transition: all 0.2s ease;
-            text-align: center; /* Texto centrado DENTRO del botón */
+            text-align: center;
             touch-action: manipulation;
+            border: 2px solid transparent;
         }
 
+        /* Botón WA: Mantiene el color pero integrado */
         .btn-wa {
-            background-color: var(--accent);
-            color: white !important;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
-            border: none;
+            background-color: var(--primary-dark); /* Usamos el verde inglés para WA, no el verde moderno */
+            color: var(--old-white) !important;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px rgba(27, 48, 34, 0.15);
+        }
+        
+        .btn-wa:hover {
+            background-color: #2c4d37; /* Ligeramente más claro en hover */
         }
 
+        /* Botón LinkedIn: Fondo blanco antiguo e integrado */
         .btn-li {
-            background-color: #FFFFFF;
-            color: var(--linkedin) !important;
-            border: 1px solid var(--linkedin);
+            background-color: var(--old-white);
+            color: var(--primary-dark) !important;
+            border: 2px solid rgba(27, 48, 34, 0.1);
             font-size: 1rem;
         }
 
@@ -127,18 +155,26 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
 
-        /* Footer Clìnico: Pasa al final con estilo serio */
+        /* Footer Clìnico: Pasa al final con estilo serio y centrado */
         .clinical-footer {
             font-size: 0.85rem;
             font-style: italic;
             opacity: 0.7;
-            padding-top: 25px;
-            border-top: 1px solid rgba(27, 48, 34, 0.05);
-            text-align: center; /* Solo el footer va centrado al final */
+            padding-top: 30px;
+            border-top: 1px solid rgba(27, 48, 34, 0.08);
+            text-align: center;
         }
 
         strong {
             font-weight: 600;
+            color: var(--primary-dark); /* Destacamos las negritas con el verde inglés */
+        }
+
+        /* Ajustes específicos para iPad en horizontal */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .container { max-width: 500px; }
+            header img { width: 160px; height: 160px; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -149,7 +185,7 @@
         <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         <h1>Lic. Narella Di Nicolo</h1>
         <div class="header-info">
-            <strong>PSICÓLOGA (UBA) | MATRÍCULA NACIONAL 85.175</strong>
+            PSICÓLOGA (UBA) | MATRÍCULA NACIONAL 85.175
         </div>
     </header>
 
