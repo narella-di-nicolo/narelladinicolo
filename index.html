@@ -9,10 +9,10 @@
     
     <style>
         :root {
-            --primary: #1B3022;   /* Verde Inglés Oscuro */
-            --accent: #27ae60;    /* Verde WhatsApp */
-            --bg: #FEFDF5;        /* Fondo Crema */
-            --linkedin: #0077b5;  
+            --primary: #1B3022;
+            --accent: #27ae60;
+            --bg: #FEFDF5;
+            --linkedin: #0077b5;
         }
 
         html, body {
@@ -24,130 +24,106 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.8;
-            color: var(--primary); /* Todo el texto en verde oscuro */
+            line-height: 1.6; /* Un poco más compacto para que suba el botón */
+            color: var(--primary);
             display: flex;
             justify-content: center;
-            padding: 60px 20px;
+            padding: 40px 20px; /* Reduje el padding superior de 60px a 40px */
         }
 
         .container {
             max-width: 520px;
-            text-align: center; /* Centra el contenido general */
-            background: transparent; /* Quitamos el cuadrado blanco */
+            text-align: center;
+            background: transparent;
         }
 
         header img {
-            width: 130px;
-            height: 130px;
+            width: 110px; /* Un poco más chica la foto para ganar espacio */
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #E6E4D9; /* Un borde sutil para la foto */
-            margin-bottom: 25px;
+            border: 3px solid #E6E4D9;
+            margin-bottom: 15px;
         }
 
         h1 {
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 5px;
             letter-spacing: -0.5px;
         }
 
         .header-info {
-            font-size: 0.95rem;
-            font-weight: 400;
-            margin-bottom: 45px;
+            font-size: 0.9rem;
+            margin-bottom: 30px; /* Menos espacio aquí */
             color: var(--primary);
             opacity: 0.8;
         }
 
-        .subtitle {
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: block;
-        }
-
-        .matricula {
-            font-size: 0.85rem;
-            display: block;
-            margin-top: 5px;
-        }
-
         .main-content {
-            text-align: justify; /* Se mantiene justificado en tablets/PC */
-            font-size: 1.05rem;
-            margin-bottom: 40px;
+            text-align: justify;
+            font-size: 1rem; /* Bajamos de 1.05 a 1 para que el flujo sea mejor */
+            margin-bottom: 25px;
+            text-justify: inter-word; /* Mejora el espacio entre palabras */
         }
 
         .clinical-footer {
             text-align: justify;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-style: italic;
-            margin-bottom: 45px;
-            padding: 20px 0;
+            margin-bottom: 30px;
+            padding: 15px 0;
             border-top: 1px solid rgba(27, 48, 34, 0.1);
         }
-
-        /* Ajuste para que no se corte en celulares */
-        @media (max-width: 480px) {
-            .main-content, .clinical-footer {
-                text-align: left; /* Quita el justificado en móvil */
-                hyphens: none;    /* Quita los guiones de corte */
-                -webkit-hyphens: none;
-            }
-            
-            h1 {
-                font-size: 1.6rem; /* Achica un pelín el título para que no salte de línea */
-            }
-        }
-
 
         .cta-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .btn {
             display: block;
             text-decoration: none;
-            padding: 18px;
-            border-radius: 14px;
+            padding: 16px; /* Botón un poco más compacto */
+            border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
-          .btn-wa {
+        .btn-wa {
             background-color: var(--accent);
             color: white;
-            font-size: 1.05rem; /* Tamaño unificado */
+            font-size: 1.05rem;
         }
 
         .btn-li {
             background-color: var(--linkedin);
             color: white;
-            font-size: 1.05rem; /* Tamaño unificado */
+            font-size: 1.05rem;
             border: none;
         }
 
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* Ajustes específicos para móviles */
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 15px; /* Menos margen externo en el celu */
+            }
+            .main-content {
+                font-size: 0.95rem; /* Letra un pelín más chica en móvil evita el efecto río */
+            }
+            header img {
+                width: 100px;
+                height: 100px;
+            }
         }
 
-        footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        /* Estilo para las negritas específicas */
         strong {
             font-weight: 600;
             color: var(--primary);
         }
     </style>
+
 </head>
 <body>
 
