@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lic. Narella Di Nicolo | Psicología Online</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --forest: #1B3022;   /* Verde Bosque Profundo */
-            --bone: #FBFBFA;     /* Blanco Hueso (Premium) */
-            --clay: #555555;     /* Gris Arcilla para textos secundarios */
-            --border: rgba(27, 48, 34, 0.12);
+            --bone: #F7F6F2;     /* Fondo General Hueso */
+            --card-white: #FFFFFF; /* Blanco para la tarjeta */
+            --clay: #666666;
+            --border: rgba(27, 48, 34, 0.1);
         }
 
         html, body {
@@ -32,125 +33,107 @@
             padding: 20px;
         }
 
-        /* EL MARCO EDITORIAL: Esto quita lo amateur */
+        /* LA TARJETA: Aquí es donde todo se une */
         .main-card {
-            max-width: 420px;
-            background: white;
-            padding: 40px 30px;
+            max-width: 440px;
+            width: 100%;
+            background-color: var(--card-white);
+            padding: 50px 35px;
+            border-radius: 8px; /* Bordes suaves pero serios */
             border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-            border-radius: 4px; /* Bordes casi rectos para seriedad */
-            position: relative;
-        }
-
-        header {
-            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             text-align: center;
         }
 
-        /* Foto con doble marco refinado */
-        .profile-frame {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 25px;
+        .profile-wrapper {
+            margin-bottom: 30px;
         }
 
-        .profile-frame img {
+        .profile-wrapper img {
             width: 130px;
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid var(--primary-dark);
-            padding: 5px; /* Espacio entre el borde y la foto */
-            display: block;
+            border: 1px solid var(--border);
+            padding: 5px;
         }
 
-        h1 {
-            font-size: 1.5rem;
+        header h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
             margin: 0;
-            letter-spacing: -0.5px;
-            font-weight: 500; /* Más liviano = más elegante */
-            color: var(--primary-dark);
+            letter-spacing: -0.5px; /* Nombre más compacto y natural */
+            color: var(--forest);
+        }
+
+        .credentials {
+            font-size: 0.8rem;
+            color: var(--clay);
+            margin-top: 8px;
+            display: block;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .header-tag {
-            font-size: 0.75rem;
+        .bio-section {
+            margin: 40px 0;
+        }
+
+        .statement {
+            font-size: 1.2rem;
+            line-height: 1.4;
             font-weight: 600;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 5px;
-            display: block;
+            margin-bottom: 20px;
+            color: var(--forest);
         }
 
-        /* Cuerpo de texto con aire */
-        .content-block {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .value-prop {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            color: var(--primary-dark);
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-
-        .description {
+        .approach {
             font-size: 0.95rem;
             line-height: 1.7;
-            color: #555;
-            font-weight: 400;
+            color: var(--clay);
         }
 
-        /* Botones estilo "Studio" */
-        .cta-container {
+        /* BOTONES: Llamado a la acción directo */
+        .action-area {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
+            margin-top: 35px;
         }
 
         .btn {
             display: block;
             text-decoration: none;
-            padding: 16px;
+            padding: 18px;
             font-size: 0.9rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            text-align: center;
-            border-radius: 2px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        .btn-wa {
-            background-color: var(--primary-dark);
+        .btn-primary {
+            background-color: var(--forest);
             color: white !important;
-            border: 1px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(27, 48, 34, 0.15);
         }
 
-        .btn-li {
-            background-color: transparent;
-            color: var(--primary-dark) !important;
-            border: 1px solid var(--border-color);
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--forest) !important;
         }
 
         .btn:hover {
-            opacity: 0.8;
-            letter-spacing: 1.5px; /* Efecto elegante al pasar el mouse */
+            transform: translateY(-2px);
+            opacity: 0.9;
         }
 
-        .footer {
-            margin-top: 40px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.4;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-            text-align: center;
+        .footer-note {
+            margin-top: 45px;
+            font-size: 0.75rem;
+            color: var(--clay);
+            opacity: 0.7;
+            border-top: 1px solid var(--border);
+            padding-top: 25px;
         }
     </style>
 </head>
@@ -158,33 +141,33 @@
 
 <div class="main-card">
     <header>
-        <div class="profile-frame">
+        <div class="profile-wrapper">
             <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         </div>
         <h1>Narella Di Nicolo</h1>
-        <span class="header-tag">Psicología Online / UBA</span>
+        <span class="credentials">Psicóloga (UBA) • M.N. 85.175</span>
     </header>
 
-    <div class="content-block">
-        <div class="value-prop">
-            Aprender a convivir con lo que sentís, para hacer lo que te importa.
+    <div class="bio-section">
+        <div class="statement">
+            Aprender a convivir con lo que sentís para hacer lo que te importa.
         </div>
-        <div class="description">
-            Especializada en <strong>ACT</strong> y <strong>DBT</strong> bajo una mirada neuroafirmativa. Un espacio colaborativo diseñado para fortalecer tu flexibilidad y autorregulación.
+        <div class="approach">
+            Mi práctica clínica se enfoca en procesos de cambio mediante modelos con evidencia científica (ACT y DBT) bajo una mirada neuroafirmativa.
         </div>
     </div>
 
-    <div class="cta-container">
-        <a href="https://wa.me/5491156213569?text=Hola%20Narella,%20quisiera%20consultarte%20para%20coordinar%20una%20primera%20entrevista." class="btn btn-wa">
-            SOLICITAR ORIENTACIÓN INICIAL
+    <div class="action-area">
+        <a href="https://wa.me/5491156213569?text=Hola%20Narella,%20quisiera%20consultarte%20para%20coordinar%20una%20primera%20entrevista." class="btn btn-primary">
+            Consultar orientación inicial
         </a>
-        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-li">
+        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-secondary">
             TRAYECTORIA ACADÉMICA
         </a>
     </div>
 
-    <div class="footer">
-        M.N. 85.175 • BUENOS AIRES, ARGENTINA
+    <div class="footer-note">
+        ATENCIÓN VIRTUAL • BUENOS AIRES, ARGENTINA
     </div>
 </div>
 
