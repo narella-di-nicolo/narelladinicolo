@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lic. Narella Di Nicolo | Psicología Online | UBA</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Lic. Narella Di Nicolo | Psicología Online</title>
     
     <style>
         :root {
             --primary-dark: #1B3022;   /* Verde Inglés Profundo */
-            --warm-bg: #F1E7D0;       /* Papel Envejecido / Pergamino Cálido */
-            --accent-wa: #27ae60;      /* Verde WhatsApp (suavizado sutilmente) */
-            --text-main: #2C2C2C;      /* Negro Carbón Suave para texto */
-            --old-white: #FDFCF7;      /* Blanco Antiguo para botones */
-            --linkedin: #0077b5;      /* Azul LinkedIn */
+            --warm-bg: #F7F5F0;       /* Crema suave/Hueso (menos intenso) */
+            --accent-wa: #27ae60;
+            --text-main: #2C2C2C;
+            --white-btn: #FFFFFF;
         }
 
         html, body {
@@ -26,90 +23,66 @@
         }
 
         body {
-            /* Fuente Serif para el cuerpo de texto */
-            font-family: 'EB Garamond', serif;
-            line-height: 1.65;
+            /* Fuente nativa de iOS / Apple */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         .container {
-            max-width: 460px; /* Ancho optimizado */
-            text-align: center; /* Alineación central para la estética académica clásica */
+            max-width: 460px;
+            text-align: center;
         }
 
-        /* INTEGRACIÓN DE LA FOTO: Más grande y con marco histórico */
         header {
-            margin-bottom: 35px;
-            position: relative;
+            margin-bottom: 40px;
         }
 
+        /* FOTO: Más grande y con marco verde oscuro */
         header img {
-            width: 150px; /* Mucho más grande */
-            height: 150px;
+            width: 180px; /* Tamaño aumentado */
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid rgba(27, 48, 34, 0.15); /* Marco ovalado profundo */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* Sombra sutil y profunda */
+            border: 6px solid var(--primary-dark); /* Marco Verde Oscuro */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             margin-bottom: 25px;
         }
 
-        /* Tipografía de Título: Serif y seria */
         h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin: 0 0 8px 0;
-            letter-spacing: -1px;
-            font-weight: 600;
+            letter-spacing: -0.5px;
+            font-weight: 700;
             color: var(--primary-dark);
         }
 
-        /* Información técnica: Todo en negrita sutil, Sans-serif para contraste moderno */
         .header-info {
-            font-family: 'Inter', sans-serif; /* Contraste moderno sutil */
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin: 0 0 45px 0;
             color: var(--primary-dark);
-            opacity: 0.85;
-            letter-spacing: 0.5px;
             font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        /* Bloque de Texto Unificado: Estilo académico, centrado y sobrio */
+        /* Cuerpo de texto unificado */
         .content-block {
-            text-align: center; /* Alineación académica clásica */
-            font-size: 1.05rem;
+            text-align: center;
+            font-size: 1.05rem; /* Tamaño unificado para todo */
             margin-bottom: 45px;
-            padding: 0 10px;
-        }
-
-        .headline {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            display: block;
-            color: var(--primary-dark);
-            font-weight: 500;
-            /* Detalle de separación sutil, integrado en el centro */
-            position: relative;
-        }
-        
-        .headline::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background-color: rgba(27, 48, 34, 0.1);
-            margin: 15px auto 0 auto;
+            padding: 0 5px;
         }
 
         .main-text p {
-            margin: 0 0 20px 0; /* Más espacio entre párrafos */
-            opacity: 0.95;
+            margin: 0 0 20px 0;
+            font-weight: 400;
         }
 
-        /* Botones: Integración Académica Sobria */
+        /* Botones */
         .cta-container {
             display: flex;
             flex-direction: column;
@@ -118,63 +91,45 @@
         }
 
         .btn {
-            font-family: 'Inter', sans-serif; /* Sans-serif para los botones */
             display: block;
             text-decoration: none;
             padding: 18px;
-            border-radius: 12px;
+            border-radius: 14px;
             font-weight: 600;
             transition: all 0.2s ease;
             text-align: center;
             touch-action: manipulation;
-            border: 2px solid transparent;
         }
 
-        /* Botón WA: Mantiene el color pero integrado */
         .btn-wa {
-            background-color: var(--primary-dark); /* Usamos el verde inglés para WA, no el verde moderno */
-            color: var(--old-white) !important;
+            background-color: var(--primary-dark);
+            color: white !important;
             font-size: 1.05rem;
-            box-shadow: 0 4px 12px rgba(27, 48, 34, 0.15);
-        }
-        
-        .btn-wa:hover {
-            background-color: #2c4d37; /* Ligeramente más claro en hover */
+            box-shadow: 0 4px 15px rgba(27, 48, 34, 0.2);
         }
 
-        /* Botón LinkedIn: Fondo blanco antiguo e integrado */
         .btn-li {
-            background-color: var(--old-white);
+            background-color: var(--white-btn);
             color: var(--primary-dark) !important;
-            border: 2px solid rgba(27, 48, 34, 0.1);
-            font-size: 1rem;
+            border: 2px solid var(--primary-dark);
+            font-size: 1.05rem;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            opacity: 0.9;
         }
 
-        /* Footer Clìnico: Pasa al final con estilo serio y centrado */
         .clinical-footer {
             font-size: 0.85rem;
             font-style: italic;
-            opacity: 0.7;
+            opacity: 0.6;
             padding-top: 30px;
-            border-top: 1px solid rgba(27, 48, 34, 0.08);
-            text-align: center;
+            border-top: 1px solid rgba(27, 48, 34, 0.1);
         }
 
         strong {
             font-weight: 600;
-            color: var(--primary-dark); /* Destacamos las negritas con el verde inglés */
-        }
-
-        /* Ajustes específicos para iPad en horizontal */
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .container { max-width: 500px; }
-            header img { width: 160px; height: 160px; }
-            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -185,16 +140,15 @@
         <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         <h1>Lic. Narella Di Nicolo</h1>
         <div class="header-info">
-            PSICÓLOGA (UBA) | MATRÍCULA NACIONAL 85.175
+            Psicóloga (UBA) | Matrícula Nacional 85.175
         </div>
     </header>
 
     <div class="content-block">
-        <span class="headline">
-            Propongo un espacio para fortalecer la <strong>flexibilidad psicológica</strong> y construir una <strong>vida con sentido</strong>, orientada a tus valores personales.
-        </span>
-        
         <div class="main-text">
+            <p>
+                Propongo un espacio para fortalecer la <strong>flexibilidad psicológica</strong> y construir una <strong>vida con sentido</strong>, orientada a tus valores personales.
+            </p>
             <p>
                 A través del <strong>análisis funcional de la conducta</strong>, trabajamos de forma colaborativa para identificar las variables que mantienen el malestar y obstaculizan tu desarrollo.
             </p>
@@ -205,11 +159,11 @@
     </div>
 
     <div class="cta-container">
-        <a href="https://wa.me/549TuNumeroAqui?text=Hola%20Lic.%20Narella,%20quisiera%20consultarte%20por%20tu%20enfoque%20y%20honorarios." class="btn btn-wa">
+        <a href="https://wa.me/5491156213569?text=Hola%20Lic.%20Narella,%20quisiera%20consultarte%20por%20tu%20enfoque%20y%20honorarios." class="btn btn-wa">
             Iniciar consulta por WhatsApp
         </a>
         
-        <a href="https://www.linkedin.com/in/tu-perfil-aqui" target="_blank" class="btn btn-li">
+        <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214" target="_blank" class="btn btn-li">
             Ver trayectoria profesional
         </a>
     </div>
