@@ -9,10 +9,9 @@
     
     <style>
         :root {
-            --primary: #1B3022;   /* Verde Inglés */
-            --accent: #27ae60;    
-            --bg: #FEFDF5;        /* Crema */
-            --text: #2C362F;      
+            --primary: #1B3022;   /* Verde Inglés Oscuro */
+            --accent: #27ae60;    /* Verde WhatsApp */
+            --bg: #FEFDF5;        /* Fondo Crema */
             --linkedin: #0077b5;  
         }
 
@@ -25,8 +24,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text);
+            line-height: 1.8;
+            color: var(--primary); /* Todo el texto en verde oscuro */
             display: flex;
             justify-content: center;
             padding: 60px 20px;
@@ -34,66 +33,72 @@
 
         .container {
             max-width: 520px;
-            background: white;
-            padding: 50px 40px;
-            border-radius: 28px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
-            text-align: center;
+            text-align: center; /* Centra el contenido general */
+            background: transparent; /* Quitamos el cuadrado blanco */
         }
 
         header img {
-            width: 125px;
-            height: 125px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--bg);
+            border: 3px solid #E6E4D9; /* Un borde sutil para la foto */
             margin-bottom: 25px;
         }
 
         h1 {
             color: var(--primary);
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             margin-bottom: 5px;
             letter-spacing: -0.5px;
         }
 
-        .subtitle {
-            color: #6A7B6E;
-            font-size: 0.9rem;
+        .header-info {
+            font-size: 0.95rem;
             font-weight: 400;
-            margin-bottom: 40px;
-            display: block;
+            margin-bottom: 45px;
+            color: var(--primary);
+            opacity: 0.8;
+        }
+
+        .subtitle {
             text-transform: uppercase;
             letter-spacing: 1.5px;
+            display: block;
+        }
+
+        .matricula {
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 5px;
         }
 
         .main-content {
-            text-align: left;
+            text-align: justify; /* Texto justificado como pediste */
             font-size: 1.05rem;
-            margin-bottom: 35px;
-            color: var(--text);
+            margin-bottom: 40px;
         }
 
         .clinical-footer {
-            font-size: 0.9rem;
-            color: #6A7B6E;
+            text-align: justify; /* También justificado */
+            font-size: 0.95rem;
             font-style: italic;
-            margin-bottom: 35px;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 20px;
+            margin-bottom: 45px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(27, 48, 34, 0.1); /* Línea divisoria muy tenue */
         }
 
         .cta-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
         .btn {
             display: block;
             text-decoration: none;
-            padding: 16px;
-            border-radius: 12px;
+            padding: 18px;
+            border-radius: 14px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -101,27 +106,30 @@
         .btn-wa {
             background-color: var(--accent);
             color: white;
+            font-size: 1.1rem;
         }
 
         .btn-li {
             background-color: transparent;
             color: var(--linkedin);
-            border: 1.5px solid #e1e8ed;
-            font-size: 0.9rem;
+            border: 1.5px solid rgba(0, 119, 181, 0.3);
+            font-size: 0.95rem;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.8rem;
-            color: #999;
+            opacity: 0.6;
         }
 
+        /* Estilo para las negritas específicas */
         strong {
+            font-weight: 600;
             color: var(--primary);
         }
     </style>
@@ -132,20 +140,23 @@
     <header>
         <img src="tu-foto.jpg" alt="Lic. Narella Di Nicolo">
         <h1>Lic. Narella Di Nicolo</h1>
-        <span class="subtitle">Psicóloga (UBA) | Terapia Online</span>
+        <div class="header-info">
+            <span class="subtitle">Psicóloga (UBA) | Terapia Online</span>
+            <span class="matricula">Matrícula Nacional 85.175 </span>
+        </div>
     </header>
 
     <div class="main-content">
         <p>
-            Acompaño procesos terapéuticos bajo una <strong>mirada neuroafirmativa</strong>, donde el objetivo principal es construir una vida con autonomía y bienestar real, respetando la singularidad de cada perfil.
+            Acompaño procesos terapéuticos bajo una <strong>mirada neuroafirmativa</strong>, donde el objetivo principal es construir una <strong>vida con autonomía y bienestar real</strong>, respetando la singularidad de cada perfil y su forma de procesar el mundo.
         </p>
         <p>
-            Propongo un espacio de trabajo colaborativo para desarrollar herramientas que permitan transitar los desafíos cotidianos de forma funcional y auténtica.
+            Propongo un espacio de trabajo colaborativo para desarrollar herramientas que permitan transitar los desafíos cotidianos de forma funcional, auténtica y sin etiquetas limitantes.
         </p>
     </div>
 
     <div class="clinical-footer">
-        Atención virtual con prácticas basadas en la evidencia (ACT y DBT) para toda la Argentina.
+        Mi práctica integra modelos con sólida evidencia científica (ACT y DBT) mediante un formato de atención virtual diseñado para pacientes de toda la Argentina.
     </div>
 
     <div class="cta-container">
@@ -154,12 +165,12 @@
         </a>
         
         <a href="https://www.linkedin.com/in/narella-di-nicolo-70a877214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="btn btn-li">
-            Ver trayectoria y certificaciones
+            Trayectoria y Certificaciones (LinkedIn)
         </a>
     </div>
 
     <footer>
-        Matrícula Nacional 85.175 | Atención Online Argentina
+        Atención Online en Argentina
     </footer>
 </div>
 
