@@ -81,11 +81,15 @@
         }
 
         /* Botones */
+           /* ... (mantener lo anterior y actualizar estos puntos específicos) ... */
+
         .cta-container {
             display: flex;
             flex-direction: column;
             gap: 14px;
             margin-bottom: 40px;
+            position: relative; /* Asegura que esté en su propia capa */
+            z-index: 10;        /* Lo pone por encima de todo */
         }
 
         .btn {
@@ -94,23 +98,33 @@
             padding: 18px;
             border-radius: 12px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            touch-action: manipulation; /* ELIMINA EL RETRASO EN SAFARI/BRAVE */
+            cursor: pointer;
         }
 
         .btn-wa {
             background-color: var(--accent);
-            color: white;
+            color: white !important; /* Forzamos color para Brave */
             font-size: 1.1rem;
             box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
+            border: none;
         }
 
-        /* Botón LinkedIn: Ahora con fondo blanco */
         .btn-li {
             background-color: #FFFFFF;
-            color: var(--linkedin);
+            color: var(--linkedin) !important;
             border: 1px solid var(--linkedin);
             font-size: 1rem;
         }
+
+        /* Si la foto no carga, que no ocupe espacio fantasma */
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
 
         .btn:hover {
             transform: translateY(-2px);
@@ -180,3 +194,4 @@
 
 </body>
 </html>
+    
